@@ -12,5 +12,8 @@ class TestOrderPrice(unittest.TestCase):
     def test_typical_order_not_tuesday_with_delivery(self):
         self.assertEqual(order_price(10, 2, False, True), 22.5)
 
+    def test_typical_order_tuesday_no_delivery(self):
+        self.assertEqual(order_price(10, 2, True, False), 15)
+
 if __name__ == '__main__':
     unittest.main()
