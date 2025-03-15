@@ -19,6 +19,9 @@ class TestOrderPrice(unittest.TestCase):
     def test_typical_order_not_tuesday_no_delivery_different_price(self):
         self.assertEqual(order_price(18, 2, False, False), 36)
 
+    def test_typical_order_not_tuesday_no_delivery_different_price_and_quantity(self):
+        self.assertEqual(order_price(18, 5, False, False), 90)
+
     def test_typical_order_not_tuesday_no_delivery_different_quantity(self):
         self.assertEqual(order_price(10, 5, False, False), 50)
 
