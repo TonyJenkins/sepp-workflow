@@ -28,9 +28,13 @@ class TestOrderPrice(unittest.TestCase):
     def test_typical_order_tuesday_no_delivery(self):
         self.assertEqual(order_price(10, 2, True, False), 15)
 
+    def test_typical_order_tuesday_with_delivery(self):
+        self.assertEqual(order_price(10, 2, True, True), 17.5)
+
     def test_error_if_zero_ordered(self):
         with self.assertRaises(ValueError):
             order_price(10, 0, False, False)
+
 
 
 if __name__ == '__main__':
