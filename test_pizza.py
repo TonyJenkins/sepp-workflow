@@ -4,9 +4,10 @@ import unittest
 
 from pizza_price import order_price
 
+
 class TestOrderPrice(unittest.TestCase):
 
-    def test_buy_one_get_one_ahlf_price_even_number(self):
+    def test_buy_one_get_one_half_price_even_number(self):
         self.assertEqual(order_price(10, 2, True, False), 15)
 
     def test_buy_one_get_one_half_price_odd_number(self):
@@ -26,6 +27,11 @@ class TestOrderPrice(unittest.TestCase):
 
     def test_typical_order_tuesday_no_delivery(self):
         self.assertEqual(order_price(10, 2, True, False), 15)
+
+    def test_error_if_zero_ordered(self):
+        with self.assertRaises(ValueError):
+            order_price(10, 0, False, False)
+
 
 if __name__ == '__main__':
     unittest.main()
