@@ -11,6 +11,6 @@ def order_price(basic_price, quantity, is_tuesday, needs_delivery):
     total_price = (full_price_pizzas * basic_price) + (half_price_pizzas * (basic_price / 2))
 
     if needs_delivery:
-        total_price += 3.5
+        total_price += 2.5
 
     return total_price
